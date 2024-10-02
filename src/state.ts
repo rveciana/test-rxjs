@@ -1,6 +1,6 @@
 import { Observable, mergeWith, scan, startWith } from "rxjs";
-import { pricesDto$, resetPrices$ } from "./service";
 import { Price } from "./model";
+import { pricesDto$, resetPrices$ } from "./service";
 
 export const prices$: Observable<Record<string, number>> = pricesDto$.pipe(
   mergeWith(resetPrices$),
